@@ -7,7 +7,7 @@
       <div class="panel-body">
         <%= pin.description %> <br/>
         <% if user_signed_in? %>
-          <strong><%= pin.user.try(:email) %></strong>
+          <strong><%= pin.user.try(:name) %></strong>
         <% end %>
         <% if pin.user == current_user %>
           <div class="actions">
