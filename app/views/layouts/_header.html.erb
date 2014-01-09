@@ -1,5 +1,5 @@
 <nav class="navbar navbar-static-top navbar-default" role="navigation">
-  <div class="container">
+  <div class="container" vertical-align="middle">
   <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
@@ -18,15 +18,15 @@
         <li><%= link_to "Home", root_path %></li>
         <li><%= link_to "About Us", about_path %></li>
         <li><%= link_to "Requests", requests_path %></li>
-        <li class="btn btn-primary btn-sm">
         <% if user_signed_in? %>
-          <%= link_to new_pin_path do %>
-            <span class="glyphicon glyphicon-plus"></span> New Pin
-          <% end %>
-        <% end %>
-        </li>
-        <li><%= link_to "Account Settings", edit_user_registration_path %></li>
-        <% if user_signed_in? %>
+          <li>
+            <%= link_to new_pin_path do %>
+              <span class="btn btn-primary btn-sm">
+                <span class="glyphicon glyphicon-plus"></span> New Pin
+              </span>
+            <% end %>
+          </li>
+          <li><%= link_to "Account Settings", edit_user_registration_path %></li>
           <li><%= link_to "Log out", destroy_user_session_path, method: :delete %></li>
         <% else %>
           <li><%= link_to "Sign in", new_user_session_path %></li>
